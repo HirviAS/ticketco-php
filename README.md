@@ -1,4 +1,4 @@
-# TicketCo API - PHP Client [![Build Status](https://travis-ci.org/HirviAS/ticketco-php.svg?branch=master)](https://travis-ci.org/HirviAS/ticketco-php)
+# TicketCo API - PHP Client
 
 * [Installation](#installation)
 * [Laravel Users](#laravel-users)
@@ -86,6 +86,7 @@ $ticketco = new TicketCo\Client('api-key');
 ```
 
 #### Fetch all events
+
 ```php
 <?php
 // Fetch all events
@@ -111,6 +112,7 @@ $events = $events->toArray();
 ```
 
 #### Get single event
+
 ```php
 // Fetch single event
 $event = $ticketco->events()->get('<id>');
@@ -128,4 +130,4 @@ $status = $ticketco->events()->status('<id>'); // Will return "available" or "en
 Queries will return an instance of the [Illuminate\Support\Collection](http://laravel.com/api/master/Illuminate/Support/Collection.html) object, which is really easy to work with. If you don't want to use the Collection object however, you can transform it into an array using `$result->toArray()`.
 
 # Further documentation
-TicketCo's API documentation is located here; http://apidoc.ticketco.no/api/v1/public
+TicketCo's API documentation is located here; http://apidoc.ticketco.no/api/v1/public.
