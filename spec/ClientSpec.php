@@ -9,7 +9,7 @@ class ClientSpec extends ObjectBehavior
 
     function let()
     {
-        $this->beConstructedWith('your-api-key');
+        $this->beConstructedWith(getenv('APIKEY'));
     }
 
     function it_is_initializable()
