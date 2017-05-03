@@ -1,4 +1,4 @@
-# TicketCo API - PHP Client
+# TicketCo API - PHP Client [![Build Status](https://travis-ci.org/HirviAS/ticketco-php.svg?branch=master)](https://travis-ci.org/HirviAS/ticketco-php)
 
 * [Installation](#installation)
 * [Laravel Users](#laravel-users)
