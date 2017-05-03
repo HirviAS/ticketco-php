@@ -1,0 +1,36 @@
+{
+    "name": "hirvi/ticketco-php",
+    "description": "Simple API wrapper for TicketCo.no",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://hirvi.no/",
+    "keywords": ["ticketco", "ticketco-php"],
+    "authors": [
+        {
+            "name": "Chris Magnussen",
+            "email": "chris@hirvi.no",
+            "homepage": "https://hirvi.no/team/chris"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TicketCo\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/support": "~5.0",
+        "symfony/console": "^3.2",
+        "nesbot/carbon": "^1.22",
+        "guzzlehttp/guzzle": "~5.0|~6.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~3.3"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
