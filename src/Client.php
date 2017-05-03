@@ -3,7 +3,7 @@
 namespace TicketCo;
 
 use GuzzleHttp\Client as GuzzleClient;
-use TicketCo\API\Events;
+use TicketCo\Resources\Events;
 
 class Client
 {
@@ -31,7 +31,7 @@ class Client
      * @param string $apikey
      * @param array $clientOptions
      */
-    public function __construct($apikey = '', $clientOptions = [])
+    public function __construct($apikey, $clientOptions = [])
     {
         $this->apikey = $apikey;
         $this->client = new GuzzleClient(
@@ -48,6 +48,14 @@ class Client
     public function events()
     {
         return new Events($this->apikey, $this->client);
+    }
+
+    /**
+     *
+     */
+    public function transactions()
+    {
+
     }
 
 }

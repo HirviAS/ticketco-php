@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketCo\API;
+namespace TicketCo\Resources;
 
 class Events extends API
 {
@@ -11,6 +11,8 @@ class Events extends API
     protected $resource = 'events';
 
     /**
+     * Get all events
+     *
      * @param array $filters Makes it possible to filter/search by providing one or more of these params;
      *                          tags            - Filter by tags. E.g ['tags' => 'teater,standup']
      *                          title           - Filter by title. E.g ['title' => 'red']
@@ -24,9 +26,26 @@ class Events extends API
         return $this->request($filters);
     }
 
+    /**
+     * Retrieve a single event
+     *
+     * @param int $id
+     * @return mixed
+     */
     public function get($id)
     {
         return $this->request([], $id);
+    }
+
+    /**
+     * Returns status of event
+     *
+     * @param int $id
+     * @return mixed
+     */
+    public function status($id)
+    {
+        return $this->request([], $id . '/status');
     }
 
 }

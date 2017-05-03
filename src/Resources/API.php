@@ -1,12 +1,10 @@
 <?php
 
-namespace TicketCo\API;
+namespace TicketCo\Resources;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Response;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class API
