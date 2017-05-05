@@ -3,6 +3,7 @@
 namespace TicketCo;
 
 use GuzzleHttp\Client as GuzzleClient;
+use TicketCo\Resources\API;
 use TicketCo\Resources\Events;
 
 class Client
@@ -56,6 +57,23 @@ class Client
     public function transactions()
     {
 
+    }
+
+    /**
+     * @return bool
+     */
+    public function testApiKey()
+    {
+        $api = new API($this->apikey, $this->client);
+        $api->setResource('events');
+
+        try {
+            $api->request([]);
+        } catch (\Exception $e) {
+            return false;
+        }
+
+        return true;
     }
 
 }

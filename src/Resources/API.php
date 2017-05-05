@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 
-abstract class API
+class API
 {
 
     /**
@@ -33,7 +33,7 @@ abstract class API
      * @return mixed
      * @throws Exception
      */
-    protected function request($filters = [], $id = '')
+    public function request($filters = [], $id = '')
     {
         if ( ! $this->apikey) {
             throw new Exception('Please provide an API key.');
@@ -67,6 +67,14 @@ abstract class API
             }
             throw new Exception($e->getMessage());
         }
+    }
+
+    /**
+     * @param string $resource
+     */
+    public function setResource($resource)
+    {
+        $this->resource = $resource;
     }
 
 }
