@@ -18,9 +18,9 @@ Add the following to your composer.json
 
 ```json
 {
-    "require": {
-        "hirvi/ticketco-php": "~1.0"
-    }
+   "require": {
+      "hirvi/ticketco-php": "~1.0"
+   }
 }
 ```
 
