@@ -60,11 +60,13 @@ class Client
     }
 
     /**
+     * @param string $key
      * @return bool
      */
-    public function testApiKey()
+    public function testApiKey($key = null)
     {
-        $api = new API($this->apikey, $this->client);
+        $key = $key ?: $this->apikey;
+        $api = new API($key, $this->client);
         $api->setResource('events');
 
         try {
