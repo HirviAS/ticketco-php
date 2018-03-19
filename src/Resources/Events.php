@@ -2,6 +2,8 @@
 
 namespace TicketCo\Resources;
 
+use DateTime;
+
 class Events extends API
 {
 
@@ -25,6 +27,23 @@ class Events extends API
     public function all($filters = [])
     {
         return $this->request($filters);
+    }
+
+    /**
+     * Patch for upcoming events after API changes
+     * @throws \Exception
+     */
+    public function upcoming()
+    {
+        date_default_timezone_set('Europe/Oslo');
+
+        $events = $this->request();
+
+        $now = new DateTime();
+        return $events->filter(function($event) use ($now) {
+            $dt = new DateTime($event->start_at);
+            return $dt >= $now;
+        });
     }
 
     /**
