@@ -14,7 +14,7 @@ class Client
      *
      * @var string
      */
-    private $endpoint = 'https://ticketco.no/api/public/v1/';
+    private $endpoint = 'https://ticketco.events/api/public/v1/';
 
     /**
      * @var Client
