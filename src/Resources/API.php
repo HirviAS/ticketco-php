@@ -4,8 +4,8 @@ namespace TicketCo\Resources;
 
 use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Exception\RequestException;
 
 class API
 {
@@ -39,7 +39,10 @@ class API
             throw new Exception('Please provide an API key.');
         }
 
-        return $this->makeRequest($this->resource . '/' . $id, $filters);
+        return $this->makeRequest(
+            $this->resource . '/' . $id,
+            $filters
+        );
     }
 
     /**
@@ -57,7 +60,9 @@ class API
             );
 
             $responseObject = json_decode($response->getBody());
-            $collection = isset($responseObject->events) ? collect($responseObject->events) : $responseObject;
+            $collection = isset($responseObject->events)
+                ? collect($responseObject->events)
+                : $responseObject;
 
             return $collection;
         } catch (RequestException $e) {
@@ -65,6 +70,7 @@ class API
             if ($response instanceof ResponseInterface) {
                 throw new Exception($e->getResponse()->getBody());
             }
+
             throw new Exception($e->getMessage());
         }
     }

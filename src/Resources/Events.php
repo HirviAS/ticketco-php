@@ -13,13 +13,14 @@ class Events extends API
     /**
      * Get all events
      *
-     * @param array $filters Makes it possible to filter/search by providing one or more of these params;
+     * @param array $filters Filter by providing one or more of these params;
      *                          tags            - Filter by tags. E.g ['tags' => 'teater,standup']
      *                          title           - Filter by title. E.g ['title' => 'red']
      *                          street_address  - ['street_address' => 'Oslo']
      *                          location        - Location name: ['location' => 'Concert']
      *                          start_at        - Exact start date: ['start_at' => '2017-1-1']
      * @return mixed
+     * @throws \Exception
      */
     public function all($filters = [])
     {
@@ -31,6 +32,7 @@ class Events extends API
      *
      * @param int $id
      * @return mixed
+     * @throws \Exception
      */
     public function get($id)
     {
@@ -42,6 +44,7 @@ class Events extends API
      *
      * @param int $id
      * @return mixed
+     * @throws \Exception
      */
     public function status($id)
     {
