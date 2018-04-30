@@ -56,7 +56,7 @@ class API
         try {
             $response = $this->client->get(
                 $resource,
-                array_merge($this->client->getConfig('query'),$arguments)
+                ['query' => array_merge($this->client->getConfig('query'),$arguments)]
             );
 
             $responseObject = json_decode($response->getBody());
